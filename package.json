@@ -2,14 +2,13 @@
   "name": "rarzipano",
   "version": "0.1.0",
   "description": "React components for Marzipano 🏞️",
-  "main": "lib/index.js",
+  "module": "lib/index.js",
   "types": "lib/types/src/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf lib/*",
-    "dev": "webpack-dev-server --config config/webpack.dev.conf.js",
-    "build:types": "tsc --emitDeclarationOnly",
-    "build": "yarn clean && yarn build:types && webpack --config config/webpack.prod.conf.js"
+    "build": "yarn clean && rollup -c",
+    "demo:start": "yarn build && npm link rarzipano && webpack-dev-server --config ./example/config/webpack.dev.conf.js"
   },
   "repository": {
     "type": "git",
@@ -37,6 +36,10 @@
     "mini-css-extract-plugin": "0.9.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "rollup": "^2.10.9",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-sourcemaps": "^0.6.2",
+    "rollup-plugin-typescript2": "^0.27.1",
     "sass-loader": "8.0.2",
     "style-loader": "1.2.1",
     "ts-loader": "7.0.4",
