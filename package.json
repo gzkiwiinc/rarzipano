@@ -2,24 +2,33 @@
   "name": "rarzipano",
   "version": "0.1.0",
   "description": "React components for Marzipano 🏞️",
-  "module": "lib/index.js",
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.es.js",
   "types": "lib/types/src/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf lib/*",
     "build": "yarn clean && rollup -c",
-    "demo:start": "yarn build && npm link rarzipano && webpack-dev-server --config ./example/config/webpack.dev.conf.js"
+    "demo:start": "yarn build && npm link /Users/ericchan/Documents/Codes/Github/rarzipano && webpack-dev-server --config ./example/config/webpack.dev.conf.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gzkiwiinc/rarzipano.git"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "typescript",
+    "marzipano",
+    "panorama"
+  ],
   "author": "Kiwi Inc's front-end developers",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/gzkiwiinc/rarzipano/issues"
   },
+  "files": [
+    "lib/**/*"
+  ],
   "homepage": "https://github.com/gzkiwiinc/rarzipano#readme",
   "devDependencies": {
     "@babel/core": "7.9.6",

@@ -6,12 +6,20 @@ import pkg from "./package.json";
 
 export default {
   input: './src/index.ts',
-  output: {
-    format: 'es',
-    file: pkg.module,
-    name: 'Rarzipano',
-    sourcemap: true,
-  },
+  output: [
+    {
+      format: 'es',
+      file: pkg.module,
+      sourcemap: false,
+      name: 'Rarzipano',
+    },
+    {
+      format: 'cjs',
+      file: pkg.main,
+      sourcemap: false,
+      name: 'Rarzipano',
+    }
+  ],
   plugins: [
     typescript({
       tsconfigOverride: {
